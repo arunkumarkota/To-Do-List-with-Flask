@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+
+  <div class="box" id="heading">
+    <h1>  To Do List  </h1>
+  </div>
+
+  <div class="box">
+    {% for item in listOfITems %}
+      <div class="item">
+        <input type="checkbox">
+        <p> {{  item  }}</p>
+      </div>
+      {% endfor %}
+
+      <form class="item" action="{{ url_for('home') }}" method="post">
+        <input type="text" name="newItem" placeholder="Type New Item" autocomplete="off">
+        <button type="submit" name="list">+</button>
+      </form>
+  </div>
+
+{% include 'footer.html' %}
